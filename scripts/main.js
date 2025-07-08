@@ -78,7 +78,7 @@ function mostrarProductosCaros() {
     let masCaro = libros.filter(libro => libro.precio > 5000);
 
     msjPersonalizado = masCaro.map(libro => {
-        return `Libro: ${libro.nombre} | Autor: "${libro.autor}" | Precio: $${libro.precio} \n`
+        return `- Libro: ${libro.nombre} | Autor: "${libro.autor}" | Precio: $${libro.precio} \n`
     });
 
     return msjPersonalizado;
@@ -116,4 +116,39 @@ while (true) {
     }
 }
 
-//4)
+//4) Cantidad total de stock de libros y cantidad de diferentes titulos
+console.log("4) Cantidad total de libros (stock) y cantidad de titulos diferentes:");
+let contador = 0;
+let libroStock = 0;
+const arrayMap = new Array();
+
+// Contador de diferentes titulos
+function contadorLibros() {
+    contador = libros.length;
+    return contador;
+}
+
+// Contador de stock y guardado de libros
+function contadorStock() {
+    for (let i = 0; i < libros.length; i++) {
+        libroStock = libroStock + libros[i].stock;
+        arrayMap.push({
+            nombre: libros[i].nombre,
+            stock: libros[i].stock
+        });
+    }
+    return libroStock;
+}
+
+// Mapeo de array a libro
+function mapeoLibros(){
+    const msjPersonalizado = arrayMap.map(libro =>{
+        return `- ${libro.nombre} tiene un stock actual de ${libro.stock} unidades disponibles.. \n`
+    });
+
+    return msjPersonalizado;
+}
+
+console.log(`A) Hay un total de ${contadorLibros()} libros diferentes en el sistema.`)
+console.log(`B) Hay un total de ${contadorStock()} libros disponibles en en el sistema`);
+console.log(mapeoLibros().join(""));
