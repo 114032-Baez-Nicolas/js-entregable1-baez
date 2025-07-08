@@ -9,7 +9,7 @@ const libros = [
 
 // 1) Cargar libros en la base de datos de la empresa
 console.log("1) Cargar libros en la base de datos de la empresa:");
-let cantidad = 2;
+let cantidad = Number(prompt("Ingrese la cantidad de libros que desea añadir al sistema.."));
 
 function validarCarga(lNombre) {
     for (let i = 0; i < libros.length; i++) {
