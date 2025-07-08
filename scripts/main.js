@@ -9,7 +9,7 @@ const libros = [
 
 // 1) Cargar libros en la base de datos de la empresa
 console.log("1) Cargar libros en la base de datos de la empresa:");
-let cantidad = 2;
+let cantidad = Number(prompt("Ingrese la cantidad de libros que desea añadir al sistema.."));
 
 function validarCarga(lNombre) {
     for (let i = 0; i < libros.length; i++) {
@@ -85,3 +85,35 @@ function mostrarProductosCaros() {
 }
 
 console.log(mostrarProductosCaros().join(""));
+
+// 3) Buscar libros por "autor" con While y Find()
+console.log("3) Busqueda de libros por autor:");
+
+while (true) {
+    let respuesta = prompt("¿Querés buscar un autor? (Y/N)").toLowerCase();
+
+    if (respuesta === "n") {
+        break;
+    }
+
+    if (respuesta === "y") {
+        let autorBuscado = prompt("Ingresá el nombre del autor:");
+
+        if (autorBuscado === "") {
+            alert("Error, se debe ingresar un nombre válido..");
+            continue;
+        }
+
+        let resultado = libros.find(libro => libro.autor.toLowerCase() === autorBuscado.toLowerCase());
+
+        if (resultado) {
+            console.log(`"${resultado.nombre}" de ${resultado.autor} - Precio: $${resultado.precio}`);
+        } else {
+            console.log(`Error, no se encontró ningún libro del autor "${autorBuscado}".`);
+        }
+    } else {
+        alert("Respuesta inválida. Escribí Y o N.");
+    }
+}
+
+//4)
