@@ -1,7 +1,7 @@
 # 📚 Entregable 1 - Simulador de Librería
 
-**Autor:** Nicolás Báez
-**Curso:** JavaScript Flex - Coderhouse
+**Autor:** Nicolás Báez  
+**Curso:** JavaScript Flex - Coderhouse  
 **Entrega:** Primera Entrega (Simulador - Lógica JS)
 
 ---
