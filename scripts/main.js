@@ -21,7 +21,6 @@ function validarCarga(lNombre) {
 }
 
 function agregarProductos(lCantidad) {
-
     for (let i = 0; i < lCantidad; i++) {
 
         let libroName = prompt("Ingrese el nombre del libro..");
